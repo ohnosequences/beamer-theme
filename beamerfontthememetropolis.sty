@@ -10,17 +10,29 @@
 \ProvidesPackage{beamerfontthememetropolis}
 
 \RequirePackage[no-math]{fontspec}
+% \RequirePackage{unicode-math}
+% \usepackage{amsmath}
+% \usepackage{unicode-math}
+
+% \setmainfont[Mapping = tex-text,
+%   BoldFont = {* Semibold},
+%   BoldItalicFont = {* Semibold Italic},
+%   ItalicFont = {* Italic}]{Open Sans}
+% sort of like Cambria Math; somehow matches a sans body text
+
+% \setmathfont{Asana Math} % math font
 
 
 \defaultfontfeatures{Mapping=tex-text}
-\setsansfont[BoldItalicFont={Fira Sans Italic}, ItalicFont={Fira Sans Light Italic}, BoldFont={Fira Sans}]{Fira Sans Light}
-\setmonofont{Fira Mono}
-\newfontfamily\ExtraLight{Fira Sans ExtraLight}
-\newfontfamily\Light{Fira Sans Light}
-\newfontfamily\Book{Fira Sans}
-\newfontfamily\Medium{Fira Sans Medium}
+\setsansfont[BoldItalicFont={Open Sans Italic}, ItalicFont={Open Sans Light Italic}, BoldFont={Open Sans}]{Fira Sans Light}
+% \setmonofont{Fira Mono}
+\setmonofont[Mapping=tex-ansi,Numbers=Lining,Ligatures=NoRequired]{Fira Mono}
+\newfontfamily\ExtraLight{Open Sans Light}
+\newfontfamily\Light{Open Sans Light}
+\newfontfamily\Book{Open Sans}
+\newfontfamily\Medium{Open Sans}
 
-\AtBeginEnvironment{tabular}{\setsansfont[BoldFont={Fira Sans}, Numbers={Monospaced}]{Fira Sans Light}}
+\AtBeginEnvironment{tabular}{\setsansfont[BoldFont={Open Sans}, Numbers={Monospaced}]{Open Sans Light}}
 
 \setbeamerfont{title}{family=\Book, size=\Large}
 \setbeamerfont{author}{family=\ExtraLight, size=\small}
