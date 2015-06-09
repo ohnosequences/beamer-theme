@@ -1,0 +1,235 @@
+\documentclass[10pt,compress]{beamer}
+
+\usetheme{ohnosequences}
+\usecolortheme{ohnosequences}
+\usefonttheme{ohnosequences}
+\usepackage{amssymb}
+\usepackage{unicode-math}
+\usepackage{fontspec,xltxtra,xunicode}
+
+\let\OldHref\href
+\renewcommand{\href}[2]{\OldHref[pdfnewwindow]{#1}{{#2}}}
+
+% \setbeamertemplate{caption}[numbered]
+% \setbeamertemplate{caption label separator}{:}
+% \setbeamercolor{caption name}{fg=normal text.fg}
+% \usepackage{amssymb,amsmath}
+% \usepackage{ifxetex,ifluatex}
+% \usepackage{fixltx2e} % provides \textsubscript
+% \usepackage{lmodern}
+%
+% \usepackage{fontspec,xltxtra,xunicode}
+% \defaultfontfeatures{Mapping=tex-text}
+\newcommand{\euro}{€}
+
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+% \IfFileExists{microtype.sty}{\usepackage{microtype}}{}
+
+% verbatim and code highlighting: Solarized Light
+\usepackage{color}
+% SOLARIZED
+\definecolor{solarized@base03}{HTML}{002B36}
+\definecolor{solarized@base02}{HTML}{073642}
+\definecolor{solarized@base01}{HTML}{586e75}
+\definecolor{solarized@base00}{HTML}{657b83}
+\definecolor{solarized@base0}{HTML}{839496}
+\definecolor{solarized@base1}{HTML}{93a1a1}
+\definecolor{solarized@base2}{HTML}{EEE8D5}
+\definecolor{solarized@base3}{HTML}{FDF6E3}
+\definecolor{solarized@yellow}{HTML}{B58900}
+\definecolor{solarized@orange}{HTML}{CB4B16}
+\definecolor{solarized@red}{HTML}{DC322F}
+\definecolor{solarized@magenta}{HTML}{D33682}
+\definecolor{solarized@violet}{HTML}{6C71C4}
+\definecolor{solarized@blue}{HTML}{268BD2}
+\definecolor{solarized@cyan}{HTML}{2AA198}
+\definecolor{solarized@green}{HTML}{859900}
+
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{fontsize=\footnotesize,commandchars=\\\{\}}
+
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+% this is solarized light
+\definecolor{shadecolor}{RGB}{253,246,227} % solarized@base3
+\newenvironment{Shaded}{\vspace{\baselineskip}\begin{shaded}}{\end{shaded}\vspace{\baselineskip}}
+% colored backgrd for verb
+\let\oldverbatim=\verbatim
+\let\endoldverbatim=\endverbatim
+\renewenvironment{verbatim}[1]{%
+  \vspace{\baselineskip}
+  \scriptsize
+  \par\setstretch{1}
+  \begin{shaded}
+  \begin{oldverbatim}{#1}%
+}%
+{%
+  \end{oldverbatim}%
+  \end{shaded}
+  \vspace{\baselineskip}
+}
+
+\newcommand{\KeywordTok}[1]{\textbf{\textcolor{solarized@base00}{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor{solarized@blue}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor{solarized@violet}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor{solarized@violet}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor{solarized@violet}{#1}}
+\newcommand{\CharTok}[1]{\textcolor{solarized@cyan}{#1}}
+\newcommand{\StringTok}[1]{\textcolor{solarized@violet}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor{solarized@base1}{\textit{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor{solarized@green}{#1}}
+\newcommand{\AlertTok}[1]{\textcolor{solarized@yellow}{\textbf{#1}}}
+% In Scala: method calls
+\newcommand{\FunctionTok}[1]{\textcolor{solarized@base1}{#1}}
+\newcommand{\RegionMarkerTok}[1]{\textcolor{solarized@base1}{#1}}
+\newcommand{\ErrorTok}[1]{\textcolor{solarized@red}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{\textcolor{solarized@base00}{#1}}
+
+
+% Comment these out if you don't want a slide with just the
+% part/section/subsection/subsubsection title:
+% \AtBeginPart{
+%   \let\insertpartnumber\relax
+%   \let\partname\relax
+%   \frame{\partpage}
+% }
+% \AtBeginSection{
+%   \let\insertsectionnumber\relax
+%   \let\sectionname\relax
+%   \frame{\sectionpage}
+% }
+% \AtBeginSubsection{
+%   \let\insertsubsectionnumber\relax
+%   \let\subsectionname\relax
+%   \frame{\subsectionpage}
+% }
+
+% \setlength{\parindent}{0pt}
+% \setlength{\parskip}{6pt plus 2pt minus 1pt}
+% \setlength{\emergencystretch}{3em}  % prevent overfull lines
+% \providecommand{\tightlist}{%
+%   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+% % \setcounter{secnumdepth}{0}
+% 
+\usepackage{booktabs}
+\usepackage[scale=2]{ccicons}
+
+\title{Slides with Pandoc}
+\subtitle{an introduction}
+\author{Eduardo Pareja-Tobes}
+\date{14 March 2023}
+
+\institute{
+  \href{http://era7bioinformatics.com}{{Era7} {\color{Grey-Light}bioinformatics}} - {\color{Salmon-Dark}oh}{\color{LightAmber-Dark}no}{\color{Grey}sequences}{\color{Salmon-Dark}!}
+}
+
+\begin{document}
+\maketitle
+
+
+% 
+\section{In the morning}\label{in-the-morning}
+
+\begin{frame}{Getting up}
+
+This should be a nice text. Put some \emph{emphasis!}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  Turn \textbf{off} alarm
+\item
+  Get out of bed
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Breakfast}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  Eat eggs
+\item
+  Drink coffee
+\end{itemize}
+
+\end{frame}
+
+\section{In the evening}\label{in-the-evening}
+
+\begin{frame}{Dinner}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  Eat spaghetti
+\item
+  Drink wine
+\end{itemize}
+
+This should be something!
+
+\end{frame}
+
+\section{Styles}\label{styles}
+
+\begin{frame}{Math}
+
+\[
+  \Delta \Delta^\dagger = 1_X
+\]
+
+Adjoints can be defined through extensions, as
+
+\[
+  Lan_G 1 = F
+\]
+
+\end{frame}
+
+\begin{frame}[fragile]{Code I}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{data} \DataTypeTok{DList} \NormalTok{a }\FunctionTok{=} \DataTypeTok{DLNode} \NormalTok{(}\DataTypeTok{DList} \NormalTok{a) a (}\DataTypeTok{DList} \NormalTok{a)}
+
+\OtherTok{takeF ::} \DataTypeTok{Integer} \OtherTok{->} \DataTypeTok{DList} \NormalTok{a }\OtherTok{->} \NormalTok{[a]}
+\NormalTok{takeF }\DecValTok{0}     \NormalTok{_                   }\FunctionTok{=} \NormalTok{[]}
+\NormalTok{takeF (n }\FunctionTok{+} \DecValTok{1}\NormalTok{) (}\DataTypeTok{DLNode} \NormalTok{_ x next) }\FunctionTok{=} \NormalTok{x }\FunctionTok{:} \NormalTok{(takeF n next)}
+
+\OtherTok{takeR ::} \DataTypeTok{Show} \NormalTok{a }\OtherTok{=>} \DataTypeTok{Integer} \OtherTok{->} \DataTypeTok{DList} \NormalTok{a }\OtherTok{->} \NormalTok{[a]}
+\NormalTok{takeR }\DecValTok{0}     \NormalTok{_                   }\FunctionTok{=} \NormalTok{[]}
+\NormalTok{takeR (n }\FunctionTok{+} \DecValTok{1}\NormalTok{) (}\DataTypeTok{DLNode} \NormalTok{prev x _) }\FunctionTok{=} \NormalTok{x }\FunctionTok{:} \NormalTok{(takeR n prev)}
+\end{Highlighting}
+\end{Shaded}
+
+\end{frame}
+
+\begin{frame}[fragile]{Code II}
+
+Scala syntax highlighting is awful
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{// Scala has objects}
+\KeywordTok{case} \KeywordTok{class} \NormalTok{test \{}
+  \KeywordTok{lazy} \KeywordTok{val} \NormalTok{x = }\DecValTok{2}
+  \KeywordTok{type} \NormalTok{T = Int}
+  \KeywordTok{def} \NormalTok{oh: String = }\StringTok{"Buh!"}
+  \KeywordTok{def} \NormalTok{uh[X <: Any](l: Boolean): X}
+
+  \KeywordTok{val} \NormalTok{f: String => Int = _.}\FunctionTok{length}
+
+  \KeywordTok{val} \NormalTok{g: String => Int = x => }\FunctionTok{f}\NormalTok{(x)}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\end{frame}
+
+\end{document}

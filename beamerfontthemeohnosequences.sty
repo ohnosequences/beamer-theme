@@ -7,7 +7,7 @@
 % you can find at https://github.com/hsrmbeamertheme/hsrmbeamertheme.
 %
 
-\ProvidesPackage{beamerfontthememetropolis}
+\ProvidesPackage{beamerfontthemeohnosequences}
 
 \RequirePackage[no-math]{fontspec}
 % \RequirePackage{unicode-math}
@@ -24,15 +24,17 @@
 
 
 \defaultfontfeatures{Mapping=tex-text}
-\setsansfont[BoldItalicFont={Open Sans Italic}, ItalicFont={Open Sans Light Italic}, BoldFont={Open Sans}]{Fira Sans Light}
+\setsansfont[BoldItalicFont={Open Sans Italic}, ItalicFont={Open Sans Light Italic}, BoldFont={Open Sans}]{Open Sans Light}
 % \setmonofont{Fira Mono}
-\setmonofont[Mapping=tex-ansi,Numbers=Lining,Ligatures=NoRequired]{Fira Mono}
+\setmonofont[
+  Mapping=tex-ansi,
+  Numbers=Lining,
+  Ligatures=NoRequired
+]{Liberation Mono}
 \newfontfamily\ExtraLight{Open Sans Light}
 \newfontfamily\Light{Open Sans Light}
 \newfontfamily\Book{Open Sans}
 \newfontfamily\Medium{Open Sans}
-
-\AtBeginEnvironment{tabular}{\setsansfont[BoldFont={Open Sans}, Numbers={Monospaced}]{Open Sans Light}}
 
 \setbeamerfont{title}{family=\Book, size=\Large}
 \setbeamerfont{author}{family=\ExtraLight, size=\small}
