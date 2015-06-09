@@ -10,18 +10,11 @@
 \ProvidesPackage{beamerfontthemeohnosequences}
 
 \RequirePackage[no-math]{fontspec}
-% \RequirePackage{unicode-math}
-% \usepackage{amsmath}
-% \usepackage{unicode-math}
 
-% \setmainfont[Mapping = tex-text,
-%   BoldFont = {* Semibold},
-%   BoldItalicFont = {* Semibold Italic},
-%   ItalicFont = {* Italic}]{Open Sans}
-% sort of like Cambria Math; somehow matches a sans body text
-
-% \setmathfont{Asana Math} % math font
-
+\setmainfont[Mapping = tex-text,
+  BoldFont = {* Semibold},
+  BoldItalicFont = {* Semibold Italic},
+  ItalicFont = {* Italic}]{Open Sans}
 
 \defaultfontfeatures{Mapping=tex-text}
 \setsansfont[BoldItalicFont={Open Sans Italic}, ItalicFont={Open Sans Light Italic}, BoldFont={Open Sans}]{Open Sans Light}
@@ -30,7 +23,7 @@
   Mapping=tex-ansi,
   Numbers=Lining,
   Ligatures=NoRequired
-]{Liberation Mono}
+]{Fira Mono}
 \newfontfamily\ExtraLight{Open Sans Light}
 \newfontfamily\Light{Open Sans Light}
 \newfontfamily\Book{Open Sans}

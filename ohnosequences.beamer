@@ -4,11 +4,11 @@
 \usecolortheme{ohnosequences}
 \usefonttheme{ohnosequences}
 \usepackage{amssymb}
-\usepackage{unicode-math}
+% \usepackage{unicode-math}
 \usepackage{fontspec,xltxtra,xunicode}
 
 \let\OldHref\href
-\renewcommand{\href}[2]{\OldHref[pdfnewwindow]{#1}{{#2}}}
+\renewcommand{\href}[2]{\OldHref[pdfnewwindow]{#1}{{\textbf{#2}}}}
 
 % \setbeamertemplate{caption}[numbered]
 % \setbeamertemplate{caption label separator}{:}
@@ -77,8 +77,8 @@ $if(highlighting-macros)$
 % colored backgrd for verb
 \let\oldverbatim=\verbatim
 \let\endoldverbatim=\endverbatim
-\renewenvironment{verbatim}[1]{%
   \vspace{\baselineskip}
+\renewenvironment{verbatim}[1]{%
   \scriptsize
   \par\setstretch{1}
   \begin{shaded}
@@ -90,7 +90,7 @@ $if(highlighting-macros)$
   \vspace{\baselineskip}
 }
 
-\newcommand{\KeywordTok}[1]{\textbf{\textcolor{solarized@base00}{#1}}}
+\newcommand{\KeywordTok}[1]{\textcolor{solarized@base00}{\textbf{#1}}}
 \newcommand{\DataTypeTok}[1]{\textcolor{solarized@blue}{#1}}
 \newcommand{\DecValTok}[1]{\textcolor{solarized@violet}{#1}}
 \newcommand{\BaseNTok}[1]{\textcolor{solarized@violet}{#1}}
@@ -105,7 +105,15 @@ $if(highlighting-macros)$
 \newcommand{\RegionMarkerTok}[1]{\textcolor{solarized@base1}{#1}}
 \newcommand{\ErrorTok}[1]{\textcolor{solarized@red}{\textbf{#1}}}
 \newcommand{\NormalTok}[1]{\textcolor{solarized@base00}{#1}}
+
 $endif$
+
+% allow to break lines more easily on tt text
+% http://tex.stackexchange.com/questions/52850/temporarily-increase-the-limit-on-space-size
+\let\OldTexttt\texttt
+\renewcommand{\texttt}[1]{ \emergencystretch=2em \OldTexttt{#1} }
+% maybe?
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
 
 $if(verbatim-in-note)$
 \usepackage{fancyvrb}
@@ -173,6 +181,21 @@ $if(lang)$
 \setmainlanguage{$mainlang$}
 \setotherlanguages{$for(otherlang)$$otherlang$$sep$,$endfor$}
 $endif$
+
+\hypersetup{
+  setpagesize=false, % page size defined by xetex
+  unicode=false, % unicode breaks when used with xetex
+  xetex,
+  pdfnewwindow,
+  colorlinks,%
+  citecolor=OldCyan-Dark,%
+  filecolor=OldCyan-Dark,%
+  linkcolor=OldCyan-Dark,%
+  urlcolor=OldCyan-Dark,
+  urlbordercolor=OldCyan-Dark
+}
+
+
 $for(header-includes)$
 $header-includes$
 $endfor$
