@@ -1,0 +1,103 @@
+% Beamer mtheme
+%
+% Copyright 2014 Matthias Vogelgesang
+% Licensed under CC-BY-SA 4.0 International.
+%
+% The initial template comes from the HSRM beamer theme by Benjamin Weiss, which
+% you can find at https://github.com/hsrmbeamertheme/hsrmbeamertheme.
+%
+
+\ProvidesPackage{beamercolorthemeohnosequences}
+
+
+%}}}
+%{{{ --- Options ----------------------
+
+\newif\if@beamer@metropolis@blockbg
+\@beamer@metropolis@blockbgfalse
+\DeclareOptionBeamer{blockbg}{\@beamer@metropolis@blockbgtrue}
+
+\DeclareOptionBeamer*{%
+  \PackageWarning{beamercolorthemeohnosequences}{Unknown option `\CurrentOption'}%
+}
+
+\ProcessOptionsBeamer
+
+%}}}
+%{{{ --- Colors ---------------------
+
+% http://paletton.com/#uid=7050t0kkJkJsntwoyp6gYgoddc4
+
+\definecolor{OldCyan}{RGB}{62,127,137}
+\definecolor{OldCyan-Dark}{RGB}{38,104,113}
+\definecolor{OldCyan-Light}{RGB}{86,156,166}
+\definecolor{OldCyan-Matte}{RGB}{62,113,120}
+\definecolor{OldCyan-MatteLight}{RGB}{95,158,166}
+% light amber variants %
+\definecolor{LightAmber}{RGB}{223,184,98}
+\definecolor{LightAmber-Dark}{RGB}{184,145,61}
+\definecolor{LightAmber-Light}{RGB}{231,195,118}
+\definecolor{LightAmber-Matte}{RGB}{195,165,100}
+\definecolor{LightAmber-MatteLight}{RGB}{231,199,131}
+% salmon variants %
+\definecolor{Salmon}{RGB}{223,107,98}
+\definecolor{Salmon-Dark}{RGB}{184,70,61}
+\definecolor{Salmon-Light}{RGB}{231,126,118}
+\definecolor{Salmon-Matte}{RGB}{195,107,100}
+\definecolor{Salmon-MatteLight}{RGB}{231,138,131}
+
+\definecolor{Grey}{RGB}{66,66,66}
+\definecolor{Grey-Light}{RGB}{129,129,129}
+\definecolor{Grey-Dark}{RGB}{65,65,65}
+\definecolor{Off-White}{RGB}{251,251,251}
+
+\definecolor{mDarkBrown}{HTML}{604c38}
+% \definecolor{mDarkTeal}{HTML}{23373b}
+% Old Cyan
+% \definecolor{mDarkTeal}{RGB}{62,127,137}
+% Old Cyan Dark
+\definecolor{mDarkTeal}{RGB}{38,104,113}
+
+\definecolor{mLightBrown}{HTML}{EB811B}
+\definecolor{mMediumBrown}{HTML}{C87A2F}
+
+% \setbeamercolor{palette primary}{fg=mDarkTeal, bg=black!2}
+\setbeamercolor{palette primary}{fg=OldCyan-Dark, bg=Off-White}
+\setbeamercolor{palette accent}{fg=Salmon-Dark, bg=Off-White}
+
+\setbeamercolor{palette secondary}{fg=Off-White, bg=OldCyan-Dark}
+\setbeamercolor{palette tertiary}{fg=Off-White, bg=mMediumBrown}
+\setbeamercolor{palette quaternary}{fg=mDarkBrown}
+
+\setbeamercolor{title}{parent=palette primary, fg=Grey-Dark}
+\setbeamercolor{subtitle}{parent=palette primary, fg=LightAmber-Dark}
+\setbeamercolor{author}{parent=palette primary, fg=Grey-Dark}
+\setbeamercolor{date}{parent=palette primary fg=Grey-Dark}
+\setbeamercolor{institute}{parent=palette primary}
+
+\setbeamercolor{section title}{parent=palette primary}
+\setbeamercolor{frametitle}{parent=palette secondary}
+\setbeamercolor{background canvas}{parent=palette primary}
+\setbeamercolor{structure}{fg=Grey}
+
+\setbeamercolor{normal text}{fg=Grey}
+\setbeamercolor{alerted text}{fg=Salmon-Dark}
+\setbeamercolor{bars}{fg=Salmon-Dark}
+
+\setbeamercolor{footnote}{fg=mDarkTeal!50}
+\setbeamercolor{footnote mark}{fg=.}
+\setbeamercolor{page number in head/foot}{fg=mDarkTeal}
+
+\if@beamer@metropolis@blockbg
+
+\setbeamercolor{block title}{use=palette primary,parent=palette primary,bg=palette primary.bg!80!fg}
+\setbeamercolor{block title alerted}{use={palette primary,alerted text},parent=palette primary,fg=alerted text.fg,bg=palette primary.bg!80!fg}
+\setbeamercolor{block title example}{use={palette primary,example text},parent=palette primary,fg=example text.fg,bg=palette primary.bg!80!fg}
+
+\setbeamercolor{block body}{use=block title,parent=normal text,bg=block title.bg!50}
+\setbeamercolor{block body alerted}{use={normal text,block body},parent=normal text,bg=block body.bg}
+\setbeamercolor{block body example}{use={normal text,block body},parent=normal text,bg=block body.bg}
+
+\fi
+
+\mode<all>

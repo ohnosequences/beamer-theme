@@ -1,0 +1,52 @@
+% Beamer mtheme
+%
+% Copyright 2014 Matthias Vogelgesang
+% Licensed under CC-BY-SA 4.0 International.
+%
+% The initial template comes from the HSRM beamer theme by Benjamin Weiss, which
+% you can find at https://github.com/hsrmbeamertheme/hsrmbeamertheme.
+%
+
+\ProvidesPackage{beamerfontthemeohnosequences}
+
+\RequirePackage[no-math]{fontspec}
+
+\setmainfont[Mapping = tex-text,
+  BoldFont = {* Semibold},
+  BoldItalicFont = {* Semibold Italic},
+  ItalicFont = {* Italic}]{Open Sans}
+
+\defaultfontfeatures{Mapping=tex-text}
+\setsansfont[BoldItalicFont={Open Sans Italic}, ItalicFont={Open Sans Light Italic}, BoldFont={Open Sans}]{Open Sans Light}
+% \setmonofont{Fira Mono}
+\setmonofont[
+  Mapping=tex-ansi,
+  Numbers=Lining,
+  Ligatures=NoRequired
+]{Fira Mono}
+\newfontfamily\ExtraLight{Open Sans Light}
+\newfontfamily\Light{Open Sans Light}
+\newfontfamily\Book{Open Sans}
+\newfontfamily\Medium{Open Sans}
+
+\setbeamerfont{title}{family=\Book, size=\Large}
+\setbeamerfont{author}{family=\ExtraLight, size=\small}
+\setbeamerfont{date}{family=\ExtraLight, size=\small}
+
+\setbeamerfont{section title}{family=\Book, size=\Large}
+
+\setbeamerfont{block title}{family=\Book, size=\normalsize}
+\setbeamerfont{block title alerted}{family=\Book,size=\normalsize}
+
+\setbeamerfont{subtitle}{family=\Light, size=\fontsize{12}{14}}
+\setbeamerfont{frametitle}{family=\Book, size=\large}
+
+\setbeamerfont{caption}{size=\small}
+\setbeamerfont{caption name}{family=\Book}
+
+\setbeamerfont{description item}{family=\Book}
+
+\setbeamerfont{page number in head/foot}{size=\scriptsize}
+
+
+\linespread{1.15}
