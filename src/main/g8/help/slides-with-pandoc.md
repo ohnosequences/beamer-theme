@@ -83,7 +83,7 @@ takeR (n + 1) (DLNode prev x _) = x : (takeR n prev)
 
 Sadly, the Scala syntax definition that Pandoc uses is awful. See [jgm/highlighting-kate#71](https://github.com/jgm/highlighting-kate/issues/71)
 
-``` scala
+``` Scala
 // Scala looks awful!
 case class test(val x: Boolean) {
 
@@ -91,7 +91,7 @@ case class test(val x: Boolean) {
   type T = Int
   def oh: String = "Buh!"
 }
-    ```
+```
 
 # Slides specific bits
 
