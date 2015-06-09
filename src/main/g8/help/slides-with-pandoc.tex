@@ -10,6 +10,9 @@
 \let\OldHref\href
 \renewcommand{\href}[2]{\OldHref[pdfnewwindow]{#1}{{\textbf{#2}}}}
 
+\providecommand{\tightlist}{%
+\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
 % \setbeamertemplate{caption}[numbered]
 % \setbeamertemplate{caption label separator}{:}
 % \setbeamercolor{caption name}{fg=normal text.fg}
@@ -221,7 +224,7 @@ sometimes handy for displaying images or a lot of code.
 Everything works the same as for any markdown document. You have
 \textbf{bold}, \emph{italic} and \emph{\textbf{bold italic}} text;
 \sout{strikeout}, \href{http://ohnosequences.com}{links} and of course
-$\lim_{n \to \infty} B(n) = c$. Block quotes work too:
+\(\lim_{n \to \infty} B(n) = c\). Block quotes work too:
 
 \begin{quote}
 quotations are a byproduct of impermanence
@@ -231,14 +234,14 @@ quotations are a byproduct of impermanence
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   and also lists
 \item
   numbered or not, nested, \ldots{}
 
   \begin{itemize}
-  \itemsep1pt\parskip0pt\parsep0pt
+  \tightlist
   \item
     the order is sometimes
   \item
@@ -263,6 +266,7 @@ quotations are a byproduct of impermanence
 \begin{figure}[htbp]
 \centering
 \includegraphics{images/valley.jpg}
+\caption{}
 \end{figure}
 
 \end{frame}
@@ -297,14 +301,22 @@ Works reasonably well. The awful Haskell syntax in all its glory:
 
 \end{frame}
 
-\begin{frame}{Code highlighting}
+\begin{frame}[fragile]{Code highlighting}
 
 Sadly, the Scala syntax definition that Pandoc uses is awful. See
 \href{https://github.com/jgm/highlighting-kate/issues/71}{jgm/highlighting-kate\#71}
 
-``` scala // Scala looks awful! case class test(val x: Boolean) \{
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{// Scala looks awful!}
+\KeywordTok{case} \KeywordTok{class} \FunctionTok{test}\NormalTok{(}\KeywordTok{val} \NormalTok{x: Boolean) \{}
 
-lazy val x = 2 type T = Int def oh: String = ``Buh!'' \} ```
+  \KeywordTok{lazy} \KeywordTok{val} \NormalTok{x = }\DecValTok{2}
+  \KeywordTok{type} \NormalTok{T = Int}
+  \KeywordTok{def} \NormalTok{oh: String = }\StringTok{"Buh!"}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
 
 \end{frame}
 
@@ -317,7 +329,7 @@ lazy val x = 2 type T = Int def oh: String = ``Buh!'' \} ```
 Sometimes we want to display items from a list incrementally:
 
 \begin{itemize}[<+->]
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   first this,
 \item

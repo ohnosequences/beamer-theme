@@ -10,6 +10,9 @@
 \let\OldHref\href
 \renewcommand{\href}[2]{\OldHref[pdfnewwindow]{#1}{{\textbf{#2}}}}
 
+\providecommand{\tightlist}{%
+\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
 % \setbeamertemplate{caption}[numbered]
 % \setbeamertemplate{caption label separator}{:}
 % \setbeamercolor{caption name}{fg=normal text.fg}
